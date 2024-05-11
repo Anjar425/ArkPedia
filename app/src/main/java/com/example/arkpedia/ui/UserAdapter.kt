@@ -75,11 +75,26 @@ class UserAdapter (
 
                 holder.bind(rarity)
 
+                val intentData = data[position]
                 holder.cvUser?.setOnClickListener {
                     val intent = Intent(context, DetailOperator::class.java)
                     intent.putExtra("name", name)
                     intent.putExtra("className", className)
                     intent.putExtra("tags", tags.toString())
+                    intent.putExtra("image", image[0].link)
+                    intent.putExtra("gender", intentData.lore.gender)
+                    intent.putExtra("place_of_birth", intentData.lore.placeOfBirth)
+                    intent.putExtra("birthday", intentData.lore.birthday)
+                    intent.putExtra("race", intentData.lore.race)
+                    intent.putExtra("height", intentData.lore.height)
+                    intent.putExtra("combat_experience", intentData.lore.combatExperience)
+                    intent.putExtra("infection_status", intentData.lore.infectionStatus)
+                    intent.putExtra("physical_strength", intentData.lore.physicalStrength)
+                    intent.putExtra("mobility", intentData.lore.mobility)
+                    intent.putExtra("physiological_endurance", intentData.lore.physiologicalEndurance)
+                    intent.putExtra("tactical_planning", intentData.lore.tacticalPlanning)
+                    intent.putExtra("combat_skill", intentData.lore.combatSkill)
+                    intent.putExtra("originium_adaptability", intentData.lore.originiumAdaptability)
                     context.startActivity(intent)
                 }
             }
