@@ -13,7 +13,7 @@ class SectionPagerAdapter(activity: AppCompatActivity, private val data: Operato
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = FragmentStat.newInstance(data)
-            1 -> fragment = FragmentBackground.newInstance(data)
+            1 -> fragment = FragmentFile.newInstance(data)
             2 -> fragment = FragmentVoicelines()
         }
         return fragment as Fragment

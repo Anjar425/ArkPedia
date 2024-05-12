@@ -16,7 +16,6 @@
         android:layout_marginRight="15dp"
         android:background="@color/black"
         app:tabPaddingEnd="25dp"
-
         app:tabPaddingStart="25dp"
         app:tabTextColor="@android:color/white" />
 

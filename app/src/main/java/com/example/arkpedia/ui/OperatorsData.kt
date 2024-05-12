@@ -7,6 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class OperatorsData(
     val name : String?,
     val image : String?,
+    val profile : String?,
     val lore : Character?
 ) : Parcelable
 

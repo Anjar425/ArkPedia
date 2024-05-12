@@ -44,6 +44,7 @@ class DetailOperator : AppCompatActivity() {
         val data = OperatorsData(
             intent.getStringExtra("name"),
             intent.getStringExtra("image"),
+            intent.getStringExtra("profile"),
             character
             )
 

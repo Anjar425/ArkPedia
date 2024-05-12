@@ -1,8 +1,25 @@
 <resources>
     <string name="app_name">ArkPedia</string>
     <string name="tab_text_1">Operators</string>
-    <string name="tab_text_2">Background</string>
+    <string name="tab_text_2">Files</string>
     <string name="tab_text_3">Voicelines</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="basic_info">Basic Info</string>
+    <string name="code_name_layout_text"><b>[Code Name]</b> %s</string>
+    <string name="gender_layout_text"><b>[Gender]</b> %s</string>
+    <string name="place_of_birth_layout_text"><b>[Place of Birth]</b> %s</string>
+    <string name="birthday_layout_text"><b>[Birthday]</b> %s</string>
+    <string name="race_layout_text"><b>[Race]</b> %s</string>
+    <string name="height_layout_text"><b>[Height]</b> %s</string>
+    <string name="combat_experience_layout_text"><b>[Combat Experience]</b> %s</string>
+    <string name="infection_status_layout_text"><b>[Infection Status]</b>\n%s</string>
+    <string name="physical_exam">Physical Exam</string>
+    <string name="physical_strength_layout_text">[Physical Strength] %s</string>
+    <string name="mobility_layout_text">[Mobility] %s</string>
+    <string name="physiological_endurance_layout_text">[Physical Resilience] %s</string>
+    <string name="tactical_planning_layout_text">[Tactical Acumen] %s</string>
+    <string name="combat_skill_layout_text">[Combat Skill] %s</string>
+    <string name="originium_adaptability_layout_text">[Originium Adaptability] %s</string>
+    <string name="profile_text">Profile</string>
+    <string name="profile_layout_text">%s</string>
 </resources>

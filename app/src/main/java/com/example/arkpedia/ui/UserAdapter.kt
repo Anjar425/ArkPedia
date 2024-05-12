@@ -6,7 +6,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -82,6 +81,7 @@ class UserAdapter (
                     intent.putExtra("className", className)
                     intent.putExtra("tags", tags.toString())
                     intent.putExtra("image", image[0].link)
+                    intent.putExtra("profile", intentData.biography)
                     intent.putExtra("gender", intentData.lore.gender)
                     intent.putExtra("place_of_birth", intentData.lore.placeOfBirth)
                     intent.putExtra("birthday", intentData.lore.birthday)
