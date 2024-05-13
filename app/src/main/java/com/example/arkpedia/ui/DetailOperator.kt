@@ -40,12 +40,57 @@ class DetailOperator : AppCompatActivity() {
             intent.getStringExtra("originium_adaptability")
         )
 
+        val descVoiceLines = arrayOf(
+            intent.getStringExtra("appointed_as_assistant") ?: "",
+            intent.getStringExtra("talk_1") ?: "",
+            intent.getStringExtra("talk_2") ?: "",
+            intent.getStringExtra("talk_3") ?: "",
+            intent.getStringExtra("talk_after_promotion_1") ?: "",
+            intent.getStringExtra("talk_after_promotion_2") ?: "",
+            intent.getStringExtra("talk_after_trust_increase_1") ?: "",
+            intent.getStringExtra("talk_after_trust_increase_2") ?: "",
+            intent.getStringExtra("talk_after_trust_increase_3") ?: "",
+            intent.getStringExtra("idle") ?: "",
+            intent.getStringExtra("onboard") ?: "",
+            intent.getStringExtra("watching_battle_record") ?: "",
+            intent.getStringExtra("promotion_1") ?: "",
+            intent.getStringExtra("promotion_2") ?: "",
+            intent.getStringExtra("added_to_squad") ?: "",
+            intent.getStringExtra("appointed_as_squad_leader") ?: "",
+            intent.getStringExtra("depart") ?: "",
+            intent.getStringExtra("begin_operation") ?: "",
+            intent.getStringExtra("selecting_operator_1") ?: "",
+            intent.getStringExtra("selecting_operator_2") ?: "",
+            intent.getStringExtra("deployment_1") ?: "",
+            intent.getStringExtra("deployment_2") ?: "",
+            intent.getStringExtra("in_battle_1") ?: "",
+            intent.getStringExtra("in_battle_2") ?: "",
+            intent.getStringExtra("in_battle_3") ?: "",
+            intent.getStringExtra("in_battle_4") ?: "",
+            intent.getStringExtra("4-star_result") ?: "",
+            intent.getStringExtra("3-star_result") ?: "",
+            intent.getStringExtra("sub_3-star_result") ?: "",
+            intent.getStringExtra("operation_failure") ?: "",
+            intent.getStringExtra("assigned_to_facility") ?: "",
+            intent.getStringExtra("tap") ?: "",
+            intent.getStringExtra("trust_tap") ?: "",
+            intent.getStringExtra("title") ?: "",
+            intent.getStringExtra("greeting") ?: ""
+        )
+        val keyVoice = resources.getStringArray(R.array.voice_lines)
+        val voiceLines = ArrayList<VoiceLines>()
+        for (i in keyVoice.indices){
+            val value = VoiceLines(keyVoice[i], descVoiceLines[i])
+            voiceLines.add(value)
+        }
+
 
         val data = OperatorsData(
             intent.getStringExtra("name"),
             intent.getStringExtra("image"),
             intent.getStringExtra("profile"),
-            character
+            character,
+            voiceLines
             )
 
 

@@ -7,13 +7,14 @@
     android:layout_height="wrap_content"
     android:layout_margin="0dp"
     android:background="@android:color/white"
-    card_view:cardCornerRadius="8dp"
+    card_view:cardCornerRadius="6dp"
     card_view:cardElevation="2dp"
     card_view:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/gray_700"
         android:padding="16dp">
 
         <ImageView
@@ -50,6 +51,7 @@
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="1.0"
             card_view:layout_constraintStart_toEndOf="@+id/img_item_photo"
@@ -61,6 +63,7 @@
             android:layout_height="20dp"
             android:layout_marginTop="8dp"
             android:textStyle="bold"
+            android:textColor="@color/gray_200"
             card_view:layout_constraintBottom_toTopOf="@+id/tags"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toBottomOf="@+id/rarity_view"
@@ -72,6 +75,7 @@
             android:layout_height="wrap_content"
             android:foregroundGravity="center_vertical"
             android:gravity="center_vertical"
+            android:textColor="@color/gray_200"
             card_view:layout_constraintBottom_toBottomOf="@+id/img_item_photo"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintVertical_bias="1.0" />

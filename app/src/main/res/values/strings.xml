@@ -22,4 +22,42 @@
     <string name="originium_adaptability_layout_text">[Originium Adaptability] %s</string>
     <string name="profile_text">Profile</string>
     <string name="profile_layout_text">%s</string>
+
+    <string-array name="voice_lines">
+        <item>Appointed as assistant</item>
+        <item>Talk 1</item>
+        <item>Talk 2</item>
+        <item>Talk 3</item>
+        <item>Talk after promotion 1</item>
+        <item>Talk after promotion 2</item>
+        <item>Talk after trust increase 1</item>
+        <item>Talk after trust increase 2</item>
+        <item>Talk after trust increase 3</item>
+        <item>Idle</item>
+        <item>Onboard</item>
+        <item>Watching battle record</item>
+        <item>Promotion 1</item>
+        <item>Promotion 2</item>
+        <item>Added to squad</item>
+        <item>Appointed as squad leader</item>
+        <item>Depart</item>
+        <item>Begin operation</item>
+        <item>Selecting operator 1</item>
+        <item>Selecting operator 2</item>
+        <item>Deployment 1</item>
+        <item>Deployment 2</item>
+        <item>In battle 1</item>
+        <item>In battle 2</item>
+        <item>In battle 3</item>
+        <item>In battle 4</item>
+        <item>4 star result</item>
+        <item>3 star result</item>
+        <item>Sub 3 star result</item>
+        <item>Operation failure</item>
+        <item>Assigned to facility</item>
+        <item>Tap</item>
+        <item>Trust tap</item>
+        <item>Title</item>
+        <item>Greeting</item>
+    </string-array>
 </resources>

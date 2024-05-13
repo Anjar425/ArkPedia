@@ -8,7 +8,8 @@ data class OperatorsData(
     val name : String?,
     val image : String?,
     val profile : String?,
-    val lore : Character?
+    val lore : Character?,
+    val voicelines : ArrayList<VoiceLines>
 ) : Parcelable
 
 @Parcelize
@@ -26,4 +27,10 @@ data class Character(
     val tacticalPlanning: String?,
     val combatSkill: String?,
     val originiumAdaptability: String?
+) : Parcelable
+
+@Parcelize
+data class VoiceLines (
+    val key: String?,
+    val desc: String?,
 ) : Parcelable

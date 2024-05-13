@@ -14,9 +14,9 @@ import com.example.arkpedia.R
 private const val ARG_DATA = "param1"
 
 class FragmentStat : Fragment() {
-    // TODO: Rename and change types of parameters
     private var data: OperatorsData? = null
 
+    @Suppress("DEPRECATION")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

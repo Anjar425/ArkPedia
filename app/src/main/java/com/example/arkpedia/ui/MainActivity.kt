@@ -1,69 +1,49 @@
 package com.example.arkpedia.ui
 
 import android.os.Bundle
-import android.util.Log
+import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.arkpedia.data.response.UserResponse
-import com.example.arkpedia.data.retrofit.ApiConfig
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import com.example.arkpedia.databinding.ActivityMainBinding
+import androidx.fragment.app.Fragment
+import com.example.arkpedia.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
-// Activity utama yang menampilkan daftar user
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
-    private lateinit var adapter: UserAdapter
+    private var fragmentHome = FragmentHome()
+    private var fragmentList = FragmentList()
+
+    private val onNavigationItemSelectedListener =
+        BottomNavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_home -> {
+                    openFragment(fragmentHome)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.navigation_list -> {
+                    openFragment(fragmentList)
+                    return@OnNavigationItemSelectedListener true
+                }
+                R.id.navigation_profile -> {
+                    openFragment(fragmentHome)
+                    return@OnNavigationItemSelectedListener true
+                }
+            }
+            false
+        }
+
+    private fun openFragment (fragment: Fragment){
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
 
-        // Menginisialisasi binding menggunakan view binding
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val navView: BottomNavigationView = findViewById(R.id.bottom_navigation)
+        navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
-        // Inisialisasi adapter untuk RecyclerView
-        adapter = UserAdapter(this@MainActivity, arrayListOf())
-
-        // Mengatur adapter, layout manager, dan fixed size untuk RecyclerView
-        binding.rvUser.adapter = adapter
-        binding.rvUser.setHasFixedSize(true)
-        binding.rvUser.layoutManager = LinearLayoutManager(this)
-
-        // Memuat data user dari API
-        getUsers()
-    }
-
-    // Memuat data user dari API menggunakan Retrofit
-    private fun getUsers() {
-        // Memanggil API untuk mendapatkan data user
-        ApiConfig.apiService().getOperators().enqueue(object : Callback<ArrayList<UserResponse>> {
-            override fun onResponse(
-                call: Call<ArrayList<UserResponse>>,
-                response: Response<ArrayList<UserResponse>>
-            ) {
-                if (response.isSuccessful) {
-                    val data = response.body()
-                    data?.let {
-                        // Mengatur data user ke adapter
-                        setData(it)
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<ArrayList<UserResponse>>, t: Throwable) {
-                // Menampilkan pesan log jika terjadi kesalahan
-                Log.d("Error", t.stackTraceToString())
-            }
-        })
-    }
-
-    // Mengatur data user ke adapter
-    private fun setData(data: ArrayList<UserResponse>) {
-        if(data.isNotEmpty()) {
-            adapter.setData(data)
-        }
+        openFragment(fragmentHome)
     }
 }

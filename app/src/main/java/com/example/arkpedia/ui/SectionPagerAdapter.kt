@@ -14,7 +14,7 @@ class SectionPagerAdapter(activity: AppCompatActivity, private val data: Operato
         when (position) {
             0 -> fragment = FragmentStat.newInstance(data)
             1 -> fragment = FragmentFile.newInstance(data)
-            2 -> fragment = FragmentVoicelines()
+            2 -> fragment = FragmentVoicelines.newInstance(data)
         }
         return fragment as Fragment
 
