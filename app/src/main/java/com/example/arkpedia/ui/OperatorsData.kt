@@ -8,6 +8,8 @@ data class OperatorsData(
     val name : String?,
     val image : String?,
     val profile : String?,
+    val className: String?,
+    val rarity: Int?,
     val lore : Character?,
     val voicelines : ArrayList<VoiceLines>
 ) : Parcelable

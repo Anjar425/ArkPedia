@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,8 @@ class FragmentList : Fragment() {
     private lateinit var rvOperators: RecyclerView
     private lateinit var binding: FragmentListBinding
     private lateinit var adapter: UserAdapter
+    private lateinit var progressBar: ProgressBar
+    private var call: Call<ArrayList<UserResponse>>? = null
 
 
     override fun onCreateView(
@@ -39,17 +42,27 @@ class FragmentList : Fragment() {
         rvOperators.setHasFixedSize(true)
         rvOperators.layoutManager = LinearLayoutManager(requireContext())
 
+        progressBar = rootView.findViewById(R.id.progressBar)
+
         getUsers()
 
         return rootView
     }
 
+    override fun onPause() {
+        super.onPause()
+        call?.cancel()
+    }
+
     private fun getUsers() {
-        ApiConfig.apiService().getOperators().enqueue(object : Callback<ArrayList<UserResponse>> {
+        progressBar.visibility = View.VISIBLE
+        call = ApiConfig.apiService().getOperators()
+        call?.enqueue(object : Callback<ArrayList<UserResponse>> {
             override fun onResponse(
                 call: Call<ArrayList<UserResponse>>,
                 response: Response<ArrayList<UserResponse>>
             ) {
+                progressBar.visibility = View.GONE
                 if (response.isSuccessful) {
                     val data = response.body()
                     data?.let {

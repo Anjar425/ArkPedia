@@ -78,7 +78,8 @@ class UserAdapter (
                 holder.cvUser?.setOnClickListener {
                     val intent = Intent(context, DetailOperator::class.java)
                     intent.putExtra("name", intentData.name)
-                    intent.putExtra("className", className)
+                    intent.putExtra("className", intentData.className[0])
+                    intent.putExtra("rarity", intentData.rarity)
                     intent.putExtra("tags", tags.toString())
                     intent.putExtra("image", intentData.art[0].link)
                     intent.putExtra("profile", intentData.biography)
@@ -132,6 +133,31 @@ class UserAdapter (
                     intent.putExtra("trust_tap", intentData.voicelines.trustTap)
                     intent.putExtra("title", intentData.voicelines.title)
                     intent.putExtra("greeting", intentData.voicelines.greeting)
+
+                    // Data Stat
+                    intent.putExtra("base_hp", intentData.statistics.base.hp)
+                    intent.putExtra("base_atk", intentData.statistics.base.atk)
+                    intent.putExtra("base_def", intentData.statistics.base.def)
+                    intent.putExtra("base_resist", intentData.statistics.base.resist)
+                    intent.putExtra("base_deploy", intentData.statistics.base.deploy)
+                    intent.putExtra("base_cost", intentData.statistics.base.cost)
+                    intent.putExtra("base_interval", intentData.statistics.base.interval)
+                    intent.putExtra("base_block", intentData.statistics.base.block)
+
+                    intent.putExtra("e0max_hp", intentData.statistics.e0max.hp)
+                    intent.putExtra("e0max_atk", intentData.statistics.e0max.atk)
+                    intent.putExtra("e0max_def", intentData.statistics.e0max.def)
+                    intent.putExtra("e0max_block", intentData.statistics.e0max.block)
+
+                    intent.putExtra("e1max_hp", intentData.statistics.e1max.hp)
+                    intent.putExtra("e1max_atk", intentData.statistics.e1max.atk)
+                    intent.putExtra("e1max_def", intentData.statistics.e1max.def)
+                    intent.putExtra("e1max_block", intentData.statistics.e1max.block)
+
+                    intent.putExtra("e2max_hp", intentData.statistics.e2max.hp)
+                    intent.putExtra("e2max_atk", intentData.statistics.e2max.atk)
+                    intent.putExtra("e2max_def", intentData.statistics.e2max.def)
+                    intent.putExtra("e2max_block", intentData.statistics.e2max.block)
                     context.startActivity(intent)
                 }
             }

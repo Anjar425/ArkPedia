@@ -4,19 +4,26 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context=".ui.FragmentList">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvOperators"
-        linearLayoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingTop="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
         tools:listitem="@layout/row_items">
 
-
     </androidx.recyclerview.widget.RecyclerView>
+
+
 
 
 </LinearLayout>

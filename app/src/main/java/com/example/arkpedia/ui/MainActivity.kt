@@ -2,15 +2,18 @@ package com.example.arkpedia.ui
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.arkpedia.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
 
     private var fragmentHome = FragmentHome()
     private var fragmentList = FragmentList()
+    private var fragmentProfile = FragmentProfile()
 
     private val onNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -24,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.navigation_profile -> {
-                    openFragment(fragmentHome)
+                    openFragment(fragmentProfile)
                     return@OnNavigationItemSelectedListener true
                 }
             }
@@ -39,6 +42,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.bottom_navigation)

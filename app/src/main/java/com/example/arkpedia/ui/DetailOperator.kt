@@ -2,6 +2,7 @@ package com.example.arkpedia.ui
 
 import android.os.Bundle
 import android.util.Log
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.arkpedia.R
@@ -23,6 +24,8 @@ class DetailOperator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_operator)
+
+        enableEdgeToEdge()
 
         val character = Character(
             intent.getStringExtra("gender"),
@@ -89,6 +92,8 @@ class DetailOperator : AppCompatActivity() {
             intent.getStringExtra("name"),
             intent.getStringExtra("image"),
             intent.getStringExtra("profile"),
+            intent.getStringExtra("className"),
+            intent.getIntExtra("rarity", 0),
             character,
             voiceLines
             )

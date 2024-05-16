@@ -60,4 +60,15 @@
         <item>Title</item>
         <item>Greeting</item>
     </string-array>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="about_me_title">ABOUT ME</string>
+    <string name="about_me_sub_title">About Me</string>
+    <string name="about_me">Mencintai diri saya dan waifu saya</string>
+    <string name="name">Eko Ginanjar Basuki Rahmat</string>
+    <string name="nim">L0122052</string>
+    <string name="status">Informatics Students 2022, Sebelas Maret University</string>
+    <string name="message">Send Me Message</string>
+    <string name="github">My Github Page</string>
 </resources>

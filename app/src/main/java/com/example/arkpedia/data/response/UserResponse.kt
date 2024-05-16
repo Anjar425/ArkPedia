@@ -6,7 +6,10 @@ import kotlinx.parcelize.Parcelize
 
 data class ArtItem(
     @field:SerializedName("link")
-    val link: String
+    val link: String,
+
+    @field:SerializedName("name")
+    val name: String
 )
 
 data class UserResponse(
@@ -32,8 +35,52 @@ data class UserResponse(
     val lore: CharacterData,
 
     @SerializedName("voicelines")
-    val voicelines: VoiceLines
+    val voicelines: VoiceLines,
+
+    @SerializedName("statistic")
+    val statistic: Statistic
 )
+
+data class Statistic (
+    @SerializedName("base")
+    val base: ParamStat,
+
+    @SerializedName("e0max")
+    val e0max: ParamStat,
+
+    @SerializedName("e1max")
+    val e1max: ParamStat,
+
+    @SerializedName("e2max")
+    val e2max: ParamStat
+    )
+
+data class ParamStat(
+    @SerializedName("hp")
+    val hp: String,
+
+    @SerializedName("atk")
+    val atk: String,
+
+    @SerializedName("def")
+    val def: String,
+
+    @SerializedName("resist")
+    val resist: String,
+
+    @SerializedName("deploy")
+    val deploy: String,
+
+    @SerializedName("cost")
+    val cost: String,
+
+    @SerializedName("interval")
+    val interval: String,
+
+    @SerializedName("block")
+    val block: String
+)
+
 
 data class CharacterData(
     @SerializedName("gender")
