@@ -1,4 +1,4 @@
-package com.example.arkpedia.ui
+package com.example.arkpedia.data.parcelize
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
@@ -11,9 +11,31 @@ data class OperatorsData(
     val className: String?,
     val rarity: Int?,
     val lore : Character?,
-    val voicelines : ArrayList<VoiceLines>
+    val voicelines : ArrayList<VoiceLines>,
+    val base: Base?,
+    val e0max: E0max?
 ) : Parcelable
 
+
+@Parcelize
+data class Base(
+    val hp: String?,
+    val atk: String?,
+    val def: String?,
+    val resist: String?,
+    val deploy: String?,
+    val cost: String?,
+    val interval: String?,
+    val block: String?
+) : Parcelable
+
+@Parcelize
+data class E0max(
+    val hp: String?,
+    val atk: String?,
+    val def: String?,
+    val block: String?
+) : Parcelable
 @Parcelize
 data class Character(
     val gender: String?,

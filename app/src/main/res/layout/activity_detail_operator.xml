@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="40dp"
-    tools:context=".ui.DetailOperator">
+    tools:context=".ui.detail.DetailOperator">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabs"

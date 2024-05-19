@@ -1,8 +1,6 @@
 package com.example.arkpedia.data.response
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.parcelize.Parcelize
 
 data class ArtItem(
     @field:SerializedName("link")
@@ -37,8 +35,8 @@ data class UserResponse(
     @SerializedName("voicelines")
     val voicelines: VoiceLines,
 
-    @SerializedName("statistic")
-    val statistic: Statistic
+    @SerializedName("statistics")
+    val statistics: Statistic
 )
 
 data class Statistic (
@@ -46,13 +44,7 @@ data class Statistic (
     val base: ParamStat,
 
     @SerializedName("e0max")
-    val e0max: ParamStat,
-
-    @SerializedName("e1max")
-    val e1max: ParamStat,
-
-    @SerializedName("e2max")
-    val e2max: ParamStat
+    val e0max: ParamStat
     )
 
 data class ParamStat(

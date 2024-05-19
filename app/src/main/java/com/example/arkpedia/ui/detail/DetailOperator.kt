@@ -1,11 +1,16 @@
-package com.example.arkpedia.ui
+package com.example.arkpedia.ui.detail
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.arkpedia.R
+import com.example.arkpedia.data.parcelize.Base
+import com.example.arkpedia.data.parcelize.Character
+import com.example.arkpedia.data.parcelize.E0max
+import com.example.arkpedia.data.parcelize.OperatorsData
+import com.example.arkpedia.data.parcelize.VoiceLines
+import com.example.arkpedia.ui.adapter.SectionPagerAdapter
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -14,9 +19,9 @@ class DetailOperator : AppCompatActivity() {
         data class TabItem(val iconRes: Int, val textRes: Int)
 
         val TAB_ITEMS: Array<TabItem> = arrayOf(
-            TabItem(R.drawable.icon1, R.string.tab_text_1),
-            TabItem(R.drawable.icon2, R.string.tab_text_2),
-            TabItem(R.drawable.icon1, R.string.tab_text_3)
+            TabItem(R.drawable.operators_icon, R.string.tab_text_1),
+            TabItem(R.drawable.files_icon, R.string.tab_text_2),
+            TabItem(R.drawable.voicelines_icon, R.string.tab_text_3)
         )
 
     }
@@ -25,7 +30,7 @@ class DetailOperator : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_operator)
 
-        enableEdgeToEdge()
+
 
         val character = Character(
             intent.getStringExtra("gender"),
@@ -87,6 +92,25 @@ class DetailOperator : AppCompatActivity() {
             voiceLines.add(value)
         }
 
+        val base = Base(
+            hp = intent.getStringExtra("base_hp") ?: "",
+            atk = intent.getStringExtra("base_atk") ?: "",
+            def = intent.getStringExtra("base_def") ?: "",
+            resist = intent.getStringExtra("base_resist") ?: "",
+            deploy = intent.getStringExtra("base_deploy") ?: "",
+            cost = intent.getStringExtra("base_cost") ?: "",
+            interval = intent.getStringExtra("base_interval") ?: "",
+            block = intent.getStringExtra("base_block") ?: ""
+        )
+
+        val e0max = E0max(
+            hp = intent.getStringExtra("e0max_hp") ?: "",
+            atk = intent.getStringExtra("e0max_atk") ?: "",
+            def = intent.getStringExtra("e0max_def") ?: "",
+            block = intent.getStringExtra("e0max_block") ?: ""
+        )
+
+
 
         val data = OperatorsData(
             intent.getStringExtra("name"),
@@ -95,7 +119,9 @@ class DetailOperator : AppCompatActivity() {
             intent.getStringExtra("className"),
             intent.getIntExtra("rarity", 0),
             character,
-            voiceLines
+            voiceLines,
+            base,
+            e0max
             )
 
 
@@ -111,12 +137,8 @@ class DetailOperator : AppCompatActivity() {
             tab.setText(tabItem.textRes)
         }.attach()
 
-        val name = intent.getStringExtra("name")
-        Log.w(name, "Error")
 
-//        val fragmentStat = sectionsPagerAdapter.getFragmentInstance(0) as FragmentStat
-//
-//        fragmentStat.setData(name)
+        enableEdgeToEdge()
         supportActionBar?.elevation = 0f
 
 

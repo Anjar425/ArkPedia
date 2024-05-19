@@ -1,4 +1,4 @@
-package com.example.arkpedia.ui
+package com.example.arkpedia.ui.frontpage
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -59,14 +59,14 @@ class FragmentHome : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val image: ImageView = view.findViewById(R.id.image_home)
-        val app_name: TextView = view.findViewById(R.id.app_name_home)
+        val appName: TextView = view.findViewById(R.id.app_name_home)
         val desc: TextView = view.findViewById(R.id.desc_home)
         progressBar = view.findViewById(R.id.progressBar_home)
 
         progressBar.visibility = View.VISIBLE
 
         try {
-            setViewLayout(image, app_name, desc)
+            setViewLayout(image, appName, desc)
         } catch (e: Exception){
             e.printStackTrace()
         }
@@ -78,7 +78,7 @@ class FragmentHome : Fragment() {
         call?.cancel()
     }
 
-    private fun setViewLayout(image: ImageView, text_name: TextView, text_decs: TextView) {
+    private fun setViewLayout(image: ImageView, textName: TextView, textDesc: TextView) {
         progressBar.visibility = View.VISIBLE
         try {
             call = ApiConfig.apiService().getOperators()
@@ -108,17 +108,14 @@ class FragmentHome : Fragment() {
                                         }
 
                                         override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
-                                            text_name.text = "ArkPedia"
-                                            text_decs.text = "Aplikasi yang menyajikan data-data dari setiap Operators pada Game Arknights mulai dari detail, background, serta voiceline dari setiap Operators"
+                                            textName.text = "ArkPedia"
+                                            textDesc.text = "Aplikasi yang menyajikan data-data dari setiap Operators pada Game Arknights mulai dari detail, background, serta voiceline dari setiap Operators"
                                             progressBar.visibility = View.GONE
                                             return false
                                         }
                                     })
                                     .into(image)
                             }
-                        } else {
-                            // Handle case when operators collection is empty
-                            // You may want to show an error message or handle this case according to your application logic
                         }
                     }
                 }

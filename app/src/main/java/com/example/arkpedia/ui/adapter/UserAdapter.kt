@@ -1,4 +1,4 @@
-package com.example.arkpedia.ui
+package com.example.arkpedia.ui.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -15,6 +15,7 @@ import com.bumptech.glide.Glide
 import com.example.arkpedia.R
 import com.example.arkpedia.data.response.ArtItem
 import com.example.arkpedia.data.response.UserResponse
+import com.example.arkpedia.ui.detail.DetailOperator
 
 class UserAdapter (
     private val context: Context,
@@ -80,8 +81,9 @@ class UserAdapter (
                     intent.putExtra("name", intentData.name)
                     intent.putExtra("className", intentData.className[0])
                     intent.putExtra("rarity", intentData.rarity)
-                    intent.putExtra("tags", tags.toString())
                     intent.putExtra("image", intentData.art[0].link)
+
+                    // Operators File
                     intent.putExtra("profile", intentData.biography)
                     intent.putExtra("gender", intentData.lore.gender)
                     intent.putExtra("place_of_birth", intentData.lore.placeOfBirth)
@@ -149,15 +151,6 @@ class UserAdapter (
                     intent.putExtra("e0max_def", intentData.statistics.e0max.def)
                     intent.putExtra("e0max_block", intentData.statistics.e0max.block)
 
-                    intent.putExtra("e1max_hp", intentData.statistics.e1max.hp)
-                    intent.putExtra("e1max_atk", intentData.statistics.e1max.atk)
-                    intent.putExtra("e1max_def", intentData.statistics.e1max.def)
-                    intent.putExtra("e1max_block", intentData.statistics.e1max.block)
-
-                    intent.putExtra("e2max_hp", intentData.statistics.e2max.hp)
-                    intent.putExtra("e2max_atk", intentData.statistics.e2max.atk)
-                    intent.putExtra("e2max_def", intentData.statistics.e2max.def)
-                    intent.putExtra("e2max_block", intentData.statistics.e2max.block)
                     context.startActivity(intent)
                 }
             }

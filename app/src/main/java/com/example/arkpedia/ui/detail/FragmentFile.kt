@@ -1,4 +1,4 @@
-package com.example.arkpedia.ui
+package com.example.arkpedia.ui.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.arkpedia.R
+import com.example.arkpedia.data.parcelize.OperatorsData
 
 
 private const val ARG_DATA = "param1"

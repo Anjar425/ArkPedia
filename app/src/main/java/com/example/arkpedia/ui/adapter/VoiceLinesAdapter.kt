@@ -1,4 +1,4 @@
-package com.example.arkpedia.ui
+package com.example.arkpedia.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.arkpedia.R
+import com.example.arkpedia.data.parcelize.VoiceLines
 
 class VoiceLinesAdapter (private val listVoice: ArrayList<VoiceLines>) : RecyclerView.Adapter<VoiceLinesAdapter.ListViewHolder>() {
     class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

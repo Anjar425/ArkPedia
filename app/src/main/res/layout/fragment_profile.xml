@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:paddingTop="40dp"
-    tools:context=".ui.FragmentProfile">
+    tools:context=".ui.frontpage.FragmentProfile">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

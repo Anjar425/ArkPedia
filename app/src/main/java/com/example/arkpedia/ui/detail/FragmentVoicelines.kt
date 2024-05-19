@@ -1,4 +1,4 @@
-package com.example.arkpedia.ui
+package com.example.arkpedia.ui.detail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.arkpedia.R
+import com.example.arkpedia.data.parcelize.OperatorsData
+import com.example.arkpedia.data.parcelize.VoiceLines
+import com.example.arkpedia.ui.adapter.VoiceLinesAdapter
 
 private const val ARG_DATA = "data"
 private lateinit var rvVoiceLines: RecyclerView
