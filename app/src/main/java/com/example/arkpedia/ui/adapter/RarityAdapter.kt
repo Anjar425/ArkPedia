@@ -23,12 +23,10 @@ class RarityAdapter(private val imageResId: Int, private val rarity: Int) :
     }
 
     override fun onBindViewHolder(holder: RarityViewHolder, position: Int) {
-        // Set gambar ke ImageView
         holder.bind(imageResId)
     }
 
     override fun getItemCount(): Int {
-        // Mengembalikan jumlah rarity sebagai jumlah item
         return rarity
     }
 

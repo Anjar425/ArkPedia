@@ -36,6 +36,7 @@ data class E0max(
     val def: String?,
     val block: String?
 ) : Parcelable
+
 @Parcelize
 data class Character(
     val gender: String?,

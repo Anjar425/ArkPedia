@@ -68,7 +68,10 @@
     <string name="about_me">Mencintai diri saya dan waifu saya</string>
     <string name="name">Eko Ginanjar Basuki Rahmat</string>
     <string name="nim">L0122052</string>
-    <string name="status">Informatics Students 2022, Sebelas Maret University</string>
+    <string name="study_program">Informatics Students 2022</string>
+    <string name="faculty">Faculty of Information Technology and Data Science</string>
+    <string name="university">Sebelas Maret University</string>
+    <string name="email">ekoginanjar4@gmail.com</string>
     <string name="message">Send Me Message</string>
     <string name="github">My Github Page</string>
 </resources>
